@@ -22,11 +22,11 @@ void MainWindow::on_cutButton_clicked()
     cut_.blank_.length_ = blank_length_;
     Cut_Widget *cut_widget = new Cut_Widget();
     cut_widget->resize(screen_width_, screen_height_);
-    details_.push_back({0, 0, 200, 100});
-    details_.push_back({0, 0, 200, 100});
-    details_.push_back({0, 0, 70, 70});
-    details_.push_back({0, 0, 70, 70});
-    details_.push_back({0, 0, 70, 70});
+//    details_.push_back({0, 0, 200, 100});
+//    details_.push_back({0, 0, 200, 100});
+//    details_.push_back({0, 0, 70, 70});
+//    details_.push_back({0, 0, 70, 70});
+//    details_.push_back({0, 0, 70, 70});
     std::sort(details_.begin(), details_.end());
     for(auto it = details_.rbegin(); it!=details_.rend(); ++it) {
         cut_.Place(*it);
