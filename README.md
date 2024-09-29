@@ -41,7 +41,8 @@ Before adding a new detail, the list with the leftovers is checked:
                   |    3   |
           ________|________|   ↓
           
-          First + next leftover - is not enought, an additional cut from the main sheet
+          First + next leftover - is not enought, an additional cut
+          from the main sheet
 
                ← length →
             -----+----+------+   ↑
@@ -64,4 +65,4 @@ Assignment for probationers.
 * QWidget
 
 ## Docs
-Docs(Docs/)
+[Docs](Docs/)
