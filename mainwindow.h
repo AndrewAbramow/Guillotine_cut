@@ -22,6 +22,7 @@ public:
     int blank_length_;
     int detail_width_;
     int detail_length_;
+    uint amount_;
     static const size_t scale_factor_ = 2;
     static const size_t screen_width_ = 840;
     static const size_t screen_height_ = 840;
@@ -41,6 +42,8 @@ private slots:
     void on_lineEdit_3_textChanged(const QString &arg1);
 
     void on_lineEdit_4_textChanged(const QString &arg1);
+
+    void on_lineEdit_5_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

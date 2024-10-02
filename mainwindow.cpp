@@ -47,17 +47,20 @@ void MainWindow::on_cutButton_clicked()
                              ,blank_width_*scale_factor_
                              ,blank_length_*scale_factor_);
     cut_widget->show();
-    ui->lineEdit->setText("");
-    ui->lineEdit_2->setText("");
+    ui->lineEdit->clear();
+    ui->lineEdit_2->clear();
 }
 
 void MainWindow::on_addButton_clicked()
 {
-   details_.push_back({0, 0, detail_width_, detail_length_});
+   for(size_t i = 0; i<amount_;i++){
+     details_.push_back({0, 0, detail_width_, detail_length_});
+   }
    QString new_detail = QString::number(detail_width_)+" x "+QString::number(detail_length_);
    ui->label_5->setText(new_detail);
-   ui->lineEdit_3->setText("");
-   ui->lineEdit_4->setText("");
+   ui->lineEdit_3->clear();
+   ui->lineEdit_4->clear();
+   //ui->lineEdit_5->clear();
 }
 
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
@@ -78,5 +81,17 @@ void MainWindow::on_lineEdit_3_textChanged(const QString &arg1)
 void MainWindow::on_lineEdit_4_textChanged(const QString &arg1)
 {
     detail_length_ = arg1.toUInt();
+}
+
+
+void MainWindow::on_lineEdit_5_textChanged(const QString &arg1)
+{
+    amount_ = arg1.toUInt();
+    if (amount_ == 0) {
+        ui->label_5->setText("Cant't cut 0 details");
+        amount_ = 1;
+    } else {
+        ui->label_5->clear();
+    }
 }
 

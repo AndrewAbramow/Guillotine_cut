@@ -4,10 +4,10 @@ Application for automatic cutting of rectangular details.
 
 ![Alt text](Docs/main_window.png)
 ## How to use
-* Enter width, cm (1) and length, cm (2) of blank sheet.
-* Enter width, cm (3) and length, cm (4) of new detail.
+* Enter width, cm [1] and length, cm [2] of blank sheet.
+* Enter width (cm) [3], length (cm) [4] and amount [5] of new details.
 * Click: "Add". 
-* Repeat the previous two steps to add another detail. 
+* Repeat the previous two steps to add another details. 
 * When all the necessary details have been added click: "Make cut".
 
 ## Under the hood

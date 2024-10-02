@@ -117,7 +117,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Enter the width, length of detail &amp; click &quot;Add&quot;</string>
+        <string>Enter the width, length and amount of details. Then click &quot;Add&quot;</string>
        </property>
       </widget>
      </item>
@@ -178,6 +178,37 @@
         </widget>
        </item>
        <item>
+        <widget class="QLabel" name="label_10">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>amount</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_5">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
         <widget class="QPushButton" name="addButton">
          <property name="font">
           <font>
@@ -189,10 +220,6 @@
          </property>
         </widget>
        </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QLabel" name="label_4">
          <property name="font">
