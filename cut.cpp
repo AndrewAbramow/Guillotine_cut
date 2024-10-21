@@ -5,9 +5,12 @@
 Cut::Cut() : blank_({0, 0, 0, 0}) {}
 //Cut::Cut(size_t width, size_t length) : blank({0, 0, width, length}) {}
 
-Detail Cut::WidthOrientation(Detail d, Detail s) {
+Detail Cut::WidthOrientation(const Detail& d, const Detail& s) {
     if ((s.width_ - d.length_)<(s.width_ - d.width_)) {
-      return d.Rotate();
+        Detail new_detail; // RVO
+        new_detail.length_ = d.width_;
+        new_detail.width_ = d.length_;
+      return new_detail;
     } else {
       return d;
     }
@@ -24,15 +27,17 @@ Detail Cut::WidthOrientation(Detail d, Detail s) {
   ________________|   ↓
 
   */
-  void Cut::Mark(int s_x0, int s_y0, Detail d) {
-    ref_points_.push_back({s_x0, s_y0});                      // A
-    ref_points_.push_back({s_x0 + d.width_, s_y0});            // B
+  void Cut::Mark(const int& s_x0
+               , const int& s_y0
+               , const Detail& d) {
+    ref_points_.push_back({s_x0, s_y0});                        // A
+    ref_points_.push_back({s_x0 + d.width_, s_y0});             // B
     ref_points_.push_back({s_x0 + d.width_, s_y0 + d.length_}); // C
-    ref_points_.push_back({s_x0, s_y0 + d.length_});           // D
+    ref_points_.push_back({s_x0, s_y0 + d.length_});            // D
 
   }
 
-  bool Cut::IsSuitLeftover(Detail d) {
+  bool Cut::IsSuitLeftover(const Detail& d) {
       if(leftovers_.empty()) return false;
       for (auto it = leftovers_.begin(); it != leftovers_.end(); ++it) {
         // enought width
@@ -126,8 +131,8 @@ Detail Cut::WidthOrientation(Detail d, Detail s) {
       return false;
     }
 
-  void Cut::Place(Detail dd) {
-    Detail d = WidthOrientation(dd, blank_);
+  void Cut::Place(const Detail& pd) {
+    Detail d = WidthOrientation(pd, blank_);
     if (!IsSuitLeftover(d)) {
       // cut from blank
       /*

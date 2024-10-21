@@ -1,11 +1,6 @@
 #include "detail.h"
 #include <QDebug>
 
-Detail Detail::Rotate()
-{
-  return {0, 0, length_, width_};
-}
-
 bool Detail::operator < (const Detail &d) const {
   return (width_ * length_) < (d.width_ * d.length_);
 }

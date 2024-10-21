@@ -17,10 +17,10 @@ Cut_Widget::~Cut_Widget()
     delete ui;
 }
 
-void Cut_Widget::AddRectangle(  size_t x1
-                              , size_t y1
-                              , size_t x2
-                              , size_t y2) {
+void Cut_Widget::AddRectangle(const size_t& x1
+                            , const size_t& y1
+                            , const size_t& x2
+                            , const size_t& y2) {
     QRect new_rectang;
     new_rectang.setCoords(x1,y1,x2,y2);
     QPalette palette;
@@ -29,16 +29,13 @@ void Cut_Widget::AddRectangle(  size_t x1
     rectang_band->setPalette(palette);
     rectang_band->setGeometry(new_rectang);
     rect_.push_back(rectang_band);
-    if (colour_count_ > 6) {
+    if (colour_count_ > colours_.size()-1) {
         colour_count_ = 0;
     }
-    //rect_.push_back(new_rectang);
 }
 
 void Cut_Widget::paintEvent(QPaintEvent*) {
-    //QPainter painter(this);
-    for(auto& r : rect_) {
-       //painter.drawRect(r);
+    for(const auto& r : rect_) {
         r->show();
     }
 }

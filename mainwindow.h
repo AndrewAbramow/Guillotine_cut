@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QVector>
+#include <QLabel>
 
 #include <detail.h>
 #include <cut.h>
@@ -22,12 +23,16 @@ public:
     int blank_length_;
     int detail_width_;
     int detail_length_;
-    uint amount_;
+    int amount_;
     static const size_t scale_factor_ = 2;
     static const size_t screen_width_ = 840;
     static const size_t screen_height_ = 840;
     QVector <Detail> details_;
     Cut cut_;
+
+    void CheckInput(int& value
+                  , QLabel* label
+                  , const char* message);
 
 
 private slots:

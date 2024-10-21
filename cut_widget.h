@@ -22,7 +22,7 @@ class Cut_Widget : public QWidget {
                          , Qt::blue
                          , Qt::cyan
                          , Qt::green
-                         , Qt::red                         
+                         , Qt::red
                          , Qt::white
                          , Qt::magenta};
   static const size_t screen_width_ = 840;
@@ -30,7 +30,10 @@ class Cut_Widget : public QWidget {
   explicit Cut_Widget(QWidget* parent = nullptr);
   ~Cut_Widget();
   virtual void paintEvent(QPaintEvent* event);
-  void AddRectangle(size_t x1, size_t y1, size_t x2, size_t y2);
+  void AddRectangle(const size_t& x1
+                  , const size_t& y1
+                  , const size_t& x2
+                  , const size_t& y2);
 
  private:
   Ui::Cut_Widget* ui;

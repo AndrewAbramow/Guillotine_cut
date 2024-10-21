@@ -11,7 +11,6 @@ struct Detail
     int length_;
 
     bool operator < (const Detail &d) const;
-    Detail Rotate();
     void Show();
 };
 

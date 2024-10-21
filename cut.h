@@ -12,10 +12,10 @@ struct Cut {
   Detail blank_;
   // Cut(size_t width, size_t length);
   Cut();
-  Detail WidthOrientation(Detail d, Detail s);
-  void Mark(int s_x0, int s_y0, Detail d);
-  bool IsSuitLeftover(Detail d);
-  void Place(Detail d);
+  Detail WidthOrientation(const Detail& d, const Detail& s);
+  void Mark(const int& s_x0, const int& s_y0, const Detail& d);
+  bool IsSuitLeftover(const Detail& d);
+  void Place(const Detail& pd);
 };
 
 #endif  // CUT_H
